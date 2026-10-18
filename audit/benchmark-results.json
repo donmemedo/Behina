@@ -1,0 +1,61 @@
+{
+  "recorded_date": "2026-10-11",
+  "environment": {
+    "python": "3.12.3",
+    "node": "24.21.0",
+    "execution": "restricted local Linux sandbox"
+  },
+  "backend": {
+    "rate_limit_allowed": {
+      "iterations": 1000,
+      "median_us": 1.7,
+      "p95_us": 3.13
+    },
+    "rate_limit_rejected": {
+      "iterations": 1000,
+      "median_us": 1.13,
+      "p95_us": 1.27
+    },
+    "estimate_validation": {
+      "iterations": 1000,
+      "median_us": 2.74,
+      "p95_us": 5.41
+    },
+    "lead_validation_and_phone_normalization": {
+      "iterations": 1000,
+      "median_us": 10.14,
+      "p95_us": 18.19
+    },
+    "synthetic_asgi_without_guard": {
+      "iterations": 500,
+      "median_us": 1.54,
+      "p95_us": 2.38
+    },
+    "synthetic_asgi_with_guard": {
+      "iterations": 500,
+      "median_us": 12.89,
+      "p95_us": 21.5
+    },
+    "legacy_sqlite_write": {
+      "iterations": 100,
+      "median_us": 1939.95,
+      "p95_us": 3802.86
+    },
+    "bounded_sqlite_write": {
+      "iterations": 100,
+      "median_us": 2767.96,
+      "p95_us": 3807.1
+    }
+  },
+  "frontend_formatting": {
+    "iterations": 10000,
+    "uncached_ms": 673.8,
+    "cached_ms": 11.1
+  },
+  "limitations": [
+    "Single run, no HTTP load, network, browser paint, or deployment measurement.",
+    "SQLite baseline is a reconstructed old per-request setup; hardened DB uses WAL, initialization, and page bounds. It is not a git-baseline benchmark.",
+    "Rate-limit timing uses a frozen clock and asserted allowed/rejected samples.",
+    "Synthetic middleware timing uses a minimal downstream ASGI app and excludes FastAPI threadpool work."
+  ]
+}

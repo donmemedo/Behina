@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>خانه‌بهینه</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center; background: #000; color: #f5f5f7; font: 17px/1.6 system-ui, sans-serif; }
+  .orb { width: 96px; height: 96px; margin: 0 auto 24px; border-radius: 28px; background: linear-gradient(135deg, #10b981, #06b6d4, #6366f1); box-shadow: 0 0 80px rgba(16, 185, 129, .5); }
+  p { color: #a1a1a6; margin: 8px 0 28px; }
+  button { font: inherit; font-weight: 600; color: #fff; border: 0; padding: 14px 28px; border-radius: 999px; background: linear-gradient(100deg, #10b981, #06b6d4); }
+</style>
+<body>
+  <main>
+    <div class="orb"></div>
+    <h2>اتصال برقرار نشد</h2>
+    <p>اینترنت را بررسی کنید و دوباره تلاش کنید.<br />Couldn't connect. Check your internet and try again.</p>
+    <button onclick="history.back(); setTimeout(() => location.reload(), 300)">تلاش دوباره · Retry</button>
+  </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "khaneh-behineh",
+  "private": true,
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "dev": "next dev -p 3023",
+    "build": "next build",
+    "start": "cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/ && PORT=3023 HOSTNAME=0.0.0.0 node .next/standalone/server.js"
+  },
+  "dependencies": {
+    "next": "^16.3.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

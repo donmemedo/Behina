@@ -1,0 +1,32 @@
+{
+  "recorded_date": "2026-10-11",
+  "frontend_npm_audit": { "status": "blocked", "reason": "getaddrinfo EAI_AGAIN registry.npmjs.org", "artifact": "frontend-npm-audit.json" },
+  "mobile_npm_audit": { "status": "blocked", "reason": "getaddrinfo EAI_AGAIN registry.npmjs.org", "artifact": "mobile-npm-audit.json" },
+  "backend_pip_audit": {
+    "command": "timeout 20s pip-audit --path backend/.venv/lib/python3.12/site-packages --timeout 3 --progress-spinner off --format json",
+    "exit_code": 1,
+    "status": "blocked",
+    "reason": "pypi.org name resolution failed before dependency advisory results were available",
+    "artifact": "pip-audit-output.txt"
+  },
+  "google_font_probe": {
+    "method": "Installed Next Google-font fetchResource, 3-second development timeout; standalone probe, not a build",
+    "resource": "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap",
+    "exit_code": 1,
+    "status": "blocked",
+    "reason": "getaddrinfo EAI_AGAIN fonts.googleapis.com"
+  },
+  "production_webpack_build": {
+    "command": null,
+    "status": "failed",
+    "reason": "Build failed because of webpack errors; detailed compiler cause not preserved",
+    "diagnostics": "build-diagnostics.json",
+    "note": "The exact pre-restart command was not retained. The layout also requires an external Google font fetch. The probe confirms that dependency is blocked, but does not prove it is the only compiler failure."
+  },
+  "frontend_lint": {
+    "command": "npm run lint (from frontend)",
+    "status": "failed",
+    "first_failure_line": "npm error Missing script: \"lint\"",
+    "reason": "No frontend lint script or linter configuration exists"
+  }
+}

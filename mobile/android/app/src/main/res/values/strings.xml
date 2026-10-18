@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">خانه‌بهینه</string>
+    <string name="title_activity_main">خانه‌بهینه</string>
+    <string name="package_name">ir.khanehbehineh.app</string>
+    <string name="custom_url_scheme">ir.khanehbehineh.app</string>
+</resources>

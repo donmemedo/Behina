@@ -1,0 +1,22 @@
+{
+  "name": "khaneh-behineh-mobile",
+  "private": true,
+  "scripts": {
+    "sync": "cap sync",
+    "sync:release": "APP_MODE=production cap sync",
+    "apk": "cap sync android && cd android && ./gradlew assembleDebug",
+    "ios": "cap sync ios && cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "typescript": "^5.9.3"
+  },
+  "allowScripts": {
+    "sharp@0.32.6": true
+  }
+}

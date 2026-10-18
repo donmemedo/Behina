@@ -1,0 +1,29 @@
+rules:
+  - id: sealed-python-code-execution
+    languages: [python]
+    severity: ERROR
+    message: Dynamic code execution requires security review.
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: exec(...)
+  - id: sealed-python-shell-execution
+    languages: [python]
+    severity: ERROR
+    message: Avoid shell=True and os.system in request handling.
+    pattern-either:
+      - pattern: subprocess.$FUNC(..., shell=True, ...)
+      - pattern: os.system(...)
+  - id: sealed-js-code-execution
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: Dynamic code execution requires security review.
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: new Function(...)
+  - id: sealed-js-html-sink
+    languages: [javascript, typescript]
+    severity: WARNING
+    message: Check that HTML assignments never contain user-controlled input.
+    pattern-either:
+      - pattern: $ELEMENT.innerHTML = $VALUE
+      - pattern: $ELEMENT.outerHTML = $VALUE
